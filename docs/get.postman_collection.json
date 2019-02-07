@@ -1,0 +1,367 @@
+{
+	"info": {
+		"_postman_id": "30a42e7a-5baa-4e9c-9aef-cb609d1313aa",
+		"name": "get",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "localhost:3000/docs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "empresa",
+								"value": "NFL",
+								"type": "text"
+							},
+							{
+								"key": "URL",
+								"value": "https://www.nfl.com/super-bowl",
+								"type": "text"
+							},
+							{
+								"key": "nombre",
+								"value": "Super Bowl",
+								"type": "text"
+							},
+							{
+								"key": "year",
+								"value": "2019",
+								"type": "text"
+							},
+							{
+								"key": "raiting",
+								"value": "5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "empresa",
+									"value": "Probando",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "probando.com",
+									"type": "text"
+								},
+								{
+									"key": "nombre ",
+									"value": "Super Bowl 50",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2018",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "4.5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/prueba/new",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"prueba",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/docs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "empresa",
+								"value": "NFL",
+								"type": "text"
+							},
+							{
+								"key": "URL",
+								"value": "https://www.nfl.com/super-bowl",
+								"type": "text"
+							},
+							{
+								"key": "nombre",
+								"value": "Super Bowl",
+								"type": "text"
+							},
+							{
+								"key": "year",
+								"value": "2019",
+								"type": "text"
+							},
+							{
+								"key": "raiting",
+								"value": "5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "empresa",
+									"value": "Probando1.0",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "probando1.0.com",
+									"type": "text"
+								},
+								{
+									"key": "nombre ",
+									"value": "Super Bowl 49",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2017",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/prueba/new",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"prueba",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/docs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/api/prueba",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"prueba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/tpPrueba/docs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "empresa",
+								"value": "NFL",
+								"type": "text"
+							},
+							{
+								"key": "URL",
+								"value": "https://www.nfl.com/super-bowl",
+								"type": "text"
+							},
+							{
+								"key": "nombre",
+								"value": "Super Bowl",
+								"type": "text"
+							},
+							{
+								"key": "year",
+								"value": "2019",
+								"type": "text"
+							},
+							{
+								"key": "raiting",
+								"value": "5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "empresa",
+									"value": "area51",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "https://www.youtube.com",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "nose",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2018",
+									"type": "text"
+								},
+								{
+									"key": "raiting",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/tpPrueba/new",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tpPrueba",
+								"new"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "localhost:3000/docs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "empresa",
+						"value": "NFL",
+						"type": "text"
+					},
+					{
+						"key": "URL",
+						"value": "https://www.nfl.com/super-bowl",
+						"type": "text"
+					},
+					{
+						"key": "nombre",
+						"value": "Super Bowl",
+						"type": "text"
+					},
+					{
+						"key": "year",
+						"value": "2019",
+						"type": "text"
+					},
+					{
+						"key": "raiting",
+						"value": "5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "empresa",
+							"value": "NFL",
+							"type": "text"
+						},
+						{
+							"key": "url",
+							"value": "https://www.nfl.com/super-bowl",
+							"type": "text"
+						},
+						{
+							"key": "nombre",
+							"value": "super bowl 51",
+							"type": "text"
+						},
+						{
+							"key": "year",
+							"value": "2019",
+							"type": "text"
+						},
+						{
+							"key": "raiting",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/prueba",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"prueba"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
