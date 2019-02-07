@@ -2,56 +2,56 @@ var express = require('express');
 var router = express.Router();
 var uuidv4 = require('uuid/v4');
 
-
 var fileModel = require('./jsonmodel');
-var data = null; 
+var data = null;
 
-var pruebaSSf = {
-  '_id':'',
-  'empresa':'',
-  'url':'',
-  'nombre':'',
-  'year':null,
-  'rating':null,
-  'FechaIng': null 
+var Pruebadata={
+    '_id':'',
+    'empresa':'',
+    'url':'',
+    'nombre':'',
+    'year':null,
+    'rating':null,
+    'fecha':null
 };
 
-// Funcion para obtener datos
-
-router.get('/', function( req, res, next) {
-  if(!data){
-    fileModel.read(function(err, filedata){
-      if(err){
-        console.log(err);
-        data = [];
-        return res.status(500).json({'Error':'Error al Obtener La información'});
-      }
-      data = JSON.parse(filedata);
-      return res.status(200).json(data);
-    });
-  } else {
-    return res.status(200).json(data);
-  }
-});
-
-router.post('/new', function(req, res, next){
-  var pruebaSSfDatos = Object.assign({},pruebaSSf, req.body);
-  var dateT = new Date();
-  pruebaSSfDatos._id = uuidv4();
-  pruebaSSfDatos.fcIng = dateT;
-
-  if(!data){
-    data = [];
-  }
-  data.push(pruebaSSfDatos);
-  fileModel.write(data, function(err){
-    if(err){
-      console.log(err);
-      return res.status(500).json({ 'Error': 'Error al Obtener Información' });
+router.get('/', function(req,res,next){
+    if(!data){
+        fileModel.read(function(err,filedata){
+            if(err){
+                console.log(err),
+                data=[];
+                return res.status(500).json({'error':'Error en la Data!'})
+            }
+            data = JSON.parse(filedata);
+            return res.status(200).json(data);
+        });
+    }else{
+        return res.status(200).json(data);
     }
-    return res.status(200).json(pruebaSSf);
-  });
 });
+
+
+router.post('/new',function(req,res,next){
+    var _Pruebadata = Object.assign({},Pruebadata,req.body);
+    var dateInicial = new Date();
+    _Pruebadata._id = uuidv4();
+    _Pruebadata.fecha = dateInicial;
+
+    if(!data){
+        data =[];
+    }
+    data.push(_Pruebadata);
+    fileModel.write(data, function(err){
+        if(err){
+            console.log(err);
+            return res.status(500).json({'error':'Error en la DATA!'});
+        }
+        return res.status(200).json(_Pruebadata);
+    });
+});
+
+
 
 fileModel.read(function(err , filedata){
   if(err){
