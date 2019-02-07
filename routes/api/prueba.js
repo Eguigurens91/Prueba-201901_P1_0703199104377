@@ -1,6 +1,6 @@
-var uuidv4 = require('uuid/v4');
 var express = require('express');
 var router = express.Router();
+var uuidv4 = require('uuid/v4');
 
 
 var fileModel = require('./jsonmodel');
@@ -11,7 +11,7 @@ var pruebaSSf = {
   'empresa':'',
   'url':'',
   'nombre':'',
-  'year':'',
+  'year':null,
   'rating':null,
   'FechaIng': null 
 };
@@ -35,13 +35,11 @@ router.get('/', function( req, res, next) {
 });
 
 router.post('/new', function(req, res, next){
-  var pruebaSSfDatos = Object.assign({} , InfoPrueba, req.body);
+  var pruebaSSfDatos = Object.assign({},pruebaSSf, req.body);
   var dateT = new Date();
-  var dateD = new Date();
-  dateD.setDate(dateT.getDate()+ 3);
-  pruebaSSfDatos.fcIng = dateT;
-  pruebaSSfDatos.due = dateD;
   pruebaSSfDatos._id = uuidv4();
+  pruebaSSfDatos.fcIng = dateT;
+
   if(!data){
     data = [];
   }
@@ -51,62 +49,9 @@ router.post('/new', function(req, res, next){
       console.log(err);
       return res.status(500).json({ 'Error': 'Error al Obtener Información' });
     }
-    return res.status(200).json(_thingsData);
+    return res.status(200).json(pruebaSSf);
   });
 });
-
-
-
-
-router.put('/done/:PruebaId', function(req, res, next){
-  var _PruebaId = req.params.thingId;
-  var _PruebaUpds = req.body;
-  var _PruebaUpdated = null;
-  var newData = data.map(
-    function(doc, i){
-      if (doc._id == _PruebaId){
-        _PruebaUpdated = Object.assign(
-          {},
-          doc,
-          {"done":true},
-          _PruebaUpds
-          );
-        return _PruebaUpdated;
-      }
-      return doc;
-    }
-  );
-  data = newData;
-  fileModel.write(data, function (err) {
-    if (err) {
-      console.log(err);
-      return res.status(500).json({ 'Error': 'Error al Guardar Información' });
-    }
-    return res.status(200).json(_PruebaUpdated);
-  });
-});
-
-
-router.delete('/delete/:PruebaId', function(req, res, next){
-  var _PruebaId = req.params._PruebaId;
-  var newData = data.filter(
-    function (doc, i) {
-      if (doc._id == _PruebaId) {
-        return false;
-      }
-      return true;
-    }
-  );
-
-  data = newData;
-  fileModel.write(data, function (err) {
-    if (err) {
-      console.log(err);
-      return res.status(500).json({ 'Error': 'Error al Guardar Información' });
-    }
-    return res.status(200).json({"delete": _PruebaId});
-  });
-}); 
 
 fileModel.read(function(err , filedata){
   if(err){

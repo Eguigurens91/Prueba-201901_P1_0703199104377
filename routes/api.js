@@ -1,10 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var apiPrueba = require ('./api/prueba');
 
-var userApi = require('./api/users');
-var pruebaApi = require('./api/prueba');
 
-router.user('/users',userApi);
-router.use ('/prueba',pruebaApi);
+router.use('/prueba',apiPrueba);
 
 module.exports = router;
